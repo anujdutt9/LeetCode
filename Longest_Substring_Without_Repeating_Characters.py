@@ -5,7 +5,7 @@
 def lengthOfLongestSubstring(s: str) -> int:
     # Check if Length of String in Zero
     if len(s) is None:
-        return
+        return 0
     # Starting Index
     start = 0
     # Length of Subsctring
