@@ -3,14 +3,18 @@
 
 def myAtoi(s: str) -> int:
   # If string is empty
-  if len(s) is None:
-    return
+  if len(s) == 0:
+    return 0
   
   # Variable to store result
   result = 0
 
-  # If string hasvalues but with whitespaces
+  # If string has values but with whitespaces
   s = s.strip()
+
+  # Test for Edge Case i.e. " "
+  if not s:
+    return 0
 
   # Check for -ve/+ve signs
   negative = False
@@ -20,7 +24,7 @@ def myAtoi(s: str) -> int:
     negative = False
   # If the first character is not numeric i.e. a string or something else
   elif not s[0].isnumeric():
-    return
+    return 0
   else:
     # Get the original character as int
     # ex: ord("4") - ord("0") = 52 - 48 = 4
@@ -50,6 +54,18 @@ def myAtoi(s: str) -> int:
 
 
 # Test Cases
+st = ""
+print(myAtoi(st))
+assert myAtoi(st) == 0
+
+st = " "
+print(myAtoi(st))
+assert myAtoi(st) == 0
+
+st = "words and 987"
+print(myAtoi(st))
+assert myAtoi(st) == 0
+
 st = "19"
 print(myAtoi(st))
 assert myAtoi(st) == 19
