@@ -10,7 +10,7 @@ def myAtoi(s: str) -> int:
   result = 0
 
   # If string hasvalues but with whitespaces
-  s = s.strip('')
+  s = s.strip()
 
   # Check for -ve/+ve signs
   negative = False
@@ -50,13 +50,17 @@ def myAtoi(s: str) -> int:
 
 
 # Test Cases
-st = "42"
+st = "19"
 print(myAtoi(st))
-assert myAtoi(st) == 42
+assert myAtoi(st) == 19
 
-st = "-101"
+st = "   -42"
 print(myAtoi(st))
-assert myAtoi(st) == -101
+assert myAtoi(st) == -42
+
+st = "  101  "
+print(myAtoi(st))
+assert myAtoi(st) == 101
 
 st = "+239"
 print(myAtoi(st))
