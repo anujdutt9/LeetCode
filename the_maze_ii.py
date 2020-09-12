@@ -6,11 +6,8 @@ class Solution:
         rows = len(maze)
         cols = len(maze[0])
         start, destination = tuple(start), tuple(destination)
-        
-        # Directions to Visit
         directions = [[-1,0], [0,1], [0,-1], [1,0]]
         
-        # Function to get Adjacent Nodes
         def neighbors(maze, node):
             temp = []
             used = set()
@@ -43,6 +40,8 @@ class Solution:
             
             if node == destination:
                 return distance
+            
+            visited.add(node)
             
             for neighbor_dist, neighbor in neighbors(maze, node):
                 heapq.heappush(heap, (distance + neighbor_dist, neighbor))
